@@ -1,0 +1,35 @@
+{
+  "name": "emotag-commit",
+  "version": "0.0.1",
+  "description": "Simple CLI tool to emojify your commits.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "bin": {
+    "ecm": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishantrivedi4046/emotag-commit.git"
+  },
+  "keywords": [
+    "CLI",
+    "Tool",
+    "Git",
+    "Commit",
+    "Typescript"
+  ],
+  "author": "Ishan Trivedi (https://github.com/ishantrivedi4046)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ishantrivedi4046/emotag-commit/issues"
+  },
+  "homepage": "https://github.com/ishantrivedi4046/emotag-commit#readme",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  }
+}
