@@ -1,11 +1,11 @@
 #! /usr/bin/env node
 
 import { group, log, select, text } from "@clack/prompts";
+import colors from "picocolors";
 import { COMMIT_TYPE_OPTIONS, DEFAULT_COMMIT_TYPE } from "./constant";
 import { getCurrentDateTime } from "./helper";
 import { gitService } from "./services/GitService";
 import { CommitTypeOption } from "./types";
-
 main();
 
 /**
@@ -18,7 +18,7 @@ export async function main() {
     {
       commitMessage: () =>
         text({
-          message: "Enter Commit Message :",
+          message: colors.cyan("Enter Commit Message :"),
           defaultValue: `${DEFAULT_COMMIT_TYPE} Commit added on ${getCurrentDateTime()}`,
           validate: (v) => {
             if (v?.length > 72) {
@@ -28,13 +28,13 @@ export async function main() {
         }),
       commitType: () =>
         select<CommitTypeOption[], string>({
-          message: "Select Commit Type :",
+          message: colors.cyan("Select Commit Type :"),
           options: COMMIT_TYPE_OPTIONS,
         }),
     },
     {
       onCancel: () => {
-        log.error("Git commit process cancelled 💔");
+        log.error(colors.red("Git commit process cancelled 💔"));
         process.exit(0);
       },
     }

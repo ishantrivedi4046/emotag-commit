@@ -3,13 +3,15 @@ import { CommitTypeOption } from "./types";
 export const DEFAULT_COMMIT_TYPE = ":technologist:";
 
 export const COMMIT_TYPE_OPTIONS: CommitTypeOption[] = [
-  { label: "🎉 : Begin a project.", value: ":tada:" },
   { label: "✨ : Introduce new features", value: ":sparkles:" },
-  { label: "🐛 : Fix a bug.", value: ":bug:" },
-  { label: "🚀 : Deploy stuff.", value: ":rocket:" },
-  { label: "🚑 : Critical hotfix.", value: ":ambulance:" },
   { label: "🚧 : Work in progress.", value: ":construction:" },
-  { label: "➕ : Add dependencies.", value: ":heavy_plus_sign:" },
+  { label: "🐛 : Fix a bug.", value: ":bug:" },
+  { label: "🚑 : Critical hotfix.", value: ":ambulance:" },
+  {
+    label: "💄 : Add or update the UI and style files.",
+    value: ":lipstick:",
+  },
+  { label: "🍱 : Add or update assets.", value: ":bento:" },
   {
     label: "💡 : Add or update comments in source code.",
     value: ":bulb:",
@@ -28,4 +30,8 @@ export const COMMIT_TYPE_OPTIONS: CommitTypeOption[] = [
     label: "📦 : Add or update compiled files or packages.",
     value: ":package:",
   },
+  { label: "🚀 : Deploy stuff.", value: ":rocket:" },
+  { label: "🎉 : Begin a project.", value: ":tada:" },
+  { label: "➕ : Add dependencies.", value: ":heavy_plus_sign:" },
+  { label: "📝 : Add or update documentation.", value: ":memo:" },
 ];

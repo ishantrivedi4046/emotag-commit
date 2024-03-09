@@ -1,5 +1,6 @@
 import { log } from "@clack/prompts";
 import { execSync } from "child_process";
+import colors from "picocolors";
 
 class Gitservice {
   static getInstance() {
@@ -54,9 +55,13 @@ class Gitservice {
     try {
       const output = execSync(`git commit -m "${message}"`).toString().trim();
       log.info(output);
-      log.success("Files Committed Successfully 🎉");
+      log.success(colors.green("Files Committed Successfully 🎉"));
     } catch (e: any) {
-      log.error(e?.message ?? "Something went wrong while creating commit 😞");
+      log.error(
+        colors.red(
+          e?.message ?? "Something went wrong while creating commit 😞"
+        )
+      );
       process.exit(0);
     }
   }
