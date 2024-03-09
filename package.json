@@ -1,5 +1,5 @@
 {
-  "name": "emotag-commit",
+  "name": "emotag-commits",
   "version": "0.0.1",
   "description": "Simple CLI tool to emojify your commits.",
   "main": "dist/index.js",
