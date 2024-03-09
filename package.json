@@ -6,7 +6,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "test": "tsup && dist/index.js"
   },
   "bin": {
     "ecm": "dist/index.js"
@@ -29,7 +30,11 @@
   },
   "homepage": "https://github.com/ishantrivedi4046/emotag-commit#readme",
   "devDependencies": {
+    "@types/node": "^20.11.25",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0"
   }
 }
