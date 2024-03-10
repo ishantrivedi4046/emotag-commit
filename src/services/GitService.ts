@@ -1,6 +1,7 @@
 import { log } from "@clack/prompts";
 import { execSync } from "child_process";
 import colors from "picocolors";
+import { ConventionalCommitType } from "../enum";
 
 class Gitservice {
   static getInstance() {
@@ -41,7 +42,26 @@ class Gitservice {
    * `type` and `message` parameters.
    */
   createCommitMessage(message: string, type: string) {
-    return this.cleanCommitMessage(`${type} ${message}`);
+    let commitMessage = "";
+    switch (type) {
+      case ConventionalCommitType.FEATURE:
+        commitMessage = `${type} feat: ${message}`;
+        break;
+      case ConventionalCommitType.FIX:
+      case ConventionalCommitType.HOTFIX:
+        commitMessage = `${type} fix: ${message}`;
+        break;
+      case ConventionalCommitType.DOCUMENTATION:
+        commitMessage = `${type} docs: ${message}`;
+        break;
+      case ConventionalCommitType.REFACTOR:
+        commitMessage = `${type} refactor: ${message}`;
+        break;
+      default:
+        commitMessage = `${type} ${message}`;
+        break;
+    }
+    return this.cleanCommitMessage(commitMessage);
   }
 
   /**
