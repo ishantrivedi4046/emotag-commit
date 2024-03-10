@@ -7,10 +7,13 @@ A CLI for creating commits with Git Emojis
  Let's celebrate each and every commit with a corresponding emoji! 😀
 </p>
 
+https://github.com/ishantrivedi4046/emotag-commits/assets/58824729/0f69f3fe-e583-4648-9eda-92660bb35643
+
 ## ✨ Features
 
 - Easy and simple to use.
 - Generates emojified commits with a series of prompts.
+- Supports semantic-release for common types : feat/fix/docs/refactor
 - Equipped with popular Git Emojis to cater your specific commit usecase.
 - Preview commit errors or success in colors.
 
