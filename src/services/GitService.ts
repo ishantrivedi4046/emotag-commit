@@ -42,23 +42,20 @@ class Gitservice {
    * `type` and `message` parameters.
    */
   createCommitMessage(message: string, type: string) {
-    let commitMessage = "";
+    let commitMessage = `${type} ${message}`;
     switch (type) {
       case ConventionalCommitType.FEATURE:
-        commitMessage = `${type} feat: ${message}`;
+        commitMessage = `feat: ${commitMessage}`;
         break;
       case ConventionalCommitType.FIX:
       case ConventionalCommitType.HOTFIX:
-        commitMessage = `${type} fix: ${message}`;
+        commitMessage = `fix: ${commitMessage}`;
         break;
       case ConventionalCommitType.DOCUMENTATION:
-        commitMessage = `${type} docs: ${message}`;
+        commitMessage = `docs: ${commitMessage}`;
         break;
       case ConventionalCommitType.REFACTOR:
-        commitMessage = `${type} refactor: ${message}`;
-        break;
-      default:
-        commitMessage = `${type} ${message}`;
+        commitMessage = `refactor: ${commitMessage}`;
         break;
     }
     return this.cleanCommitMessage(commitMessage);
